@@ -26,11 +26,13 @@ official Turkish higher-education data providers. These are public data.
   repository; the underlying YÖK Atlas figures are public data. If you are the
   author and want changes to this attribution or removal, please open an issue.
 
-### YÖK Atlas live fetch (year 2025)
-- Fetched via https://github.com/saidsurucu/yokatlas-py
-- Public YÖK Atlas data.
+### YÖK Atlas live fetch (years 2025-2026)
+- 2025 fetched via https://github.com/saidsurucu/yokatlas-py; 2026 fetched from
+  the same YÖK Atlas tercih-kılavuz API on 2026-10-28
+  (`scripts/update_from_yokatlas.py`).
+- Public YÖK Atlas data. Also provides the 2026 program catalogue.
 
 ## Official guides (catalogue, DGS transfer)
 
-Parsed from the 2025 ÖSYM Higher Education Programs and Quotas Guide and the
-2026 DGS guide, published by ÖSYM. Public documents.
+Parsed from the 2025 ÖSYM Higher Education Programs and Quotas Guide (2025
+catalogue) and the 2026 DGS guide, published by ÖSYM. Public documents.
