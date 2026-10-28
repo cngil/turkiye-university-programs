@@ -101,8 +101,7 @@ The 2025 catalogue and the DGS transfer map are parsed from the official 2025
 ÖSYM and 2026 DGS guides. The 2026 catalogue and statistics come from the YÖK
 Atlas tercih-kılavuz listing (fetched 2026-10-28); where a program's name,
 faculty or university agrees with the 2025 guide, the guide's spelling is kept.
-`scripts/update_from_yokatlas.py` reproduces the 2026 update and the data
-fixes listed below. The two community datasets share the
+The two community datasets share the
 same underlying YÖK Atlas data and overlap on 2019-2024, so each era is taken
 from a single source to avoid conflicting duplicates. See `ATTRIBUTION.md`.
 
