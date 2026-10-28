@@ -122,7 +122,11 @@ function render() {
   ui.mute.setAttribute('aria-label', ui.mute.title);
 
   for (const button of ui.presets) button.classList.toggle('active', Number(button.dataset.preset) === percent);
-  for (const button of ui.effects) button.setAttribute('aria-pressed', String(settings[button.dataset.effect]));
+  for (const button of ui.effects) {
+    const checked = settings.effect === button.dataset.effect;
+    button.setAttribute('aria-checked', String(checked));
+    button.tabIndex = checked ? 0 : -1;
+  }
 
   for (const el of [ui.slider, ui.input, ui.mute, ui.reset, ...ui.presets, ...ui.effects]) el.disabled = restricted;
 
@@ -429,9 +433,17 @@ function wireControls() {
 
   ui.mute.addEventListener('click', () => change({ percent: state.settings.percent === 0 ? state.lastAudible || 100 : 0 }));
   for (const button of ui.presets) button.addEventListener('click', () => change({ percent: Number(button.dataset.preset) }));
-  for (const button of ui.effects) {
-    button.addEventListener('click', () => change({ [button.dataset.effect]: !state.settings[button.dataset.effect] }));
-  }
+  for (const button of ui.effects) button.addEventListener('click', () => change({ effect: button.dataset.effect }));
+  // Radio group keyboard behaviour: arrow keys move the selection.
+  document.querySelector('.effects').addEventListener('keydown', (e) => {
+    const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+    if (!step) return;
+    e.preventDefault();
+    const index = ui.effects.findIndex((b) => b.dataset.effect === state.settings.effect);
+    const next = ui.effects[(index + step + ui.effects.length) % ui.effects.length];
+    change({ effect: next.dataset.effect });
+    next.focus();
+  });
 
   ui.reset.addEventListener('click', async () => {
     if (!state.tab) return;

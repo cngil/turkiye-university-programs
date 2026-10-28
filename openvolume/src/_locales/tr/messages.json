@@ -3,7 +3,7 @@
     "message": "OpenVolume: Ses Yükseltici"
   },
   "extDescription": {
-    "message": "Herhangi bir sekmenin sesini %600'e kadar yükseltin; bas ve konuşma güçlendirme dahil. Açık kaynak, takip yok, veri toplama yok."
+    "message": "Herhangi bir sekmenin sesini %500'e kadar yükseltin; bas ve konuşma güçlendirme dahil. Açık kaynak, takip yok, veri toplama yok."
   },
   "cmdUp": {
     "message": "Sesi %10 artır"
@@ -37,12 +37,6 @@
   },
   "voiceTitle": {
     "message": "Konuşma güçlendirme: diyaloglar ve podcast'ler daha anlaşılır"
-  },
-  "limiter": {
-    "message": "Limitleyici"
-  },
-  "limiterTitle": {
-    "message": "Limitleyici: yüksek seste bozulmayı (cızırtıyı) önler"
   },
   "reset": {
     "message": "Sıfırla"
@@ -128,9 +122,6 @@
   "about": {
     "message": "Hakkında"
   },
-  "privacyNote": {
-    "message": "Veri toplanmaz · Açık kaynak"
-  },
   "privacyLong": {
     "message": "OpenVolume tamamen tarayıcınızın içinde çalışır. Sunucusu, analitiği yoktur ve hiçbir ağ isteği yapmaz."
   },
@@ -190,5 +181,14 @@
   },
   "themeToLight": {
     "message": "Açık moda geç"
+  },
+  "effectDefault": {
+    "message": "Normal"
+  },
+  "defaultTitle": {
+    "message": "Normal: ekolayzer olmadan orijinal ses"
+  },
+  "soundMode": {
+    "message": "Ses modu"
   }
 }

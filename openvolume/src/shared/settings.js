@@ -2,12 +2,13 @@
 // Nothing in here touches browser APIs.
 
 export const MIN_PERCENT = 0;
-export const MAX_PERCENT = 600;
+export const MAX_PERCENT = 500;
 export const STEP_PERCENT = 10;
 
-const FLAGS = ['bass', 'voice', 'limiter'];
+// One sound mode at a time: 'default' (untouched), 'voice' or 'bass'.
+export const EFFECTS = Object.freeze(['default', 'voice', 'bass']);
 
-export const NEUTRAL = Object.freeze({ percent: 100, bass: false, voice: false, limiter: false });
+export const NEUTRAL = Object.freeze({ percent: 100, effect: 'default' });
 
 export function clampPercent(value) {
   const n = Number(value);
@@ -19,19 +20,18 @@ export function clampPercent(value) {
 // fields fall back to `base`.
 export function sanitizeSettings(input, base = NEUTRAL) {
   const src = input !== null && typeof input === 'object' ? input : {};
-  const out = {
+  return {
     percent: Number.isFinite(src.percent) ? clampPercent(src.percent) : clampPercent(base.percent),
+    effect: EFFECTS.includes(src.effect) ? src.effect : EFFECTS.includes(base.effect) ? base.effect : NEUTRAL.effect,
   };
-  for (const flag of FLAGS) out[flag] = typeof src[flag] === 'boolean' ? src[flag] : Boolean(base[flag]);
-  return out;
 }
 
 export function isNeutral(settings) {
-  return settings.percent === NEUTRAL.percent && FLAGS.every((flag) => !settings[flag]);
+  return settings.percent === NEUTRAL.percent && settings.effect === NEUTRAL.effect;
 }
 
 export function sameSettings(a, b) {
-  return a.percent === b.percent && FLAGS.every((flag) => Boolean(a[flag]) === Boolean(b[flag]));
+  return a.percent === b.percent && a.effect === b.effect;
 }
 
 // The key used to remember a volume per website. Only real web pages qualify.

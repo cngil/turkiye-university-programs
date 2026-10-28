@@ -11,9 +11,9 @@ import {
   siteKey,
 } from '../src/shared/settings.js';
 
-test('clampPercent keeps values in 0..600 and rounds', () => {
+test('clampPercent keeps values in 0..500 and rounds', () => {
   assert.equal(clampPercent(-5), 0);
-  assert.equal(clampPercent(601), 600);
+  assert.equal(clampPercent(501), 500);
   assert.equal(clampPercent(249.6), 250);
   assert.equal(clampPercent('300'), 300);
   assert.equal(clampPercent('abc'), 100);
@@ -21,22 +21,18 @@ test('clampPercent keeps values in 0..600 and rounds', () => {
 });
 
 test('sanitizeSettings drops unknown and invalid fields', () => {
-  assert.deepEqual(sanitizeSettings({ percent: 9999, bass: 'yes', evil: 1 }), { ...NEUTRAL, percent: 600 });
+  assert.deepEqual(sanitizeSettings({ percent: 9999, effect: 'loud', evil: 1 }), { ...NEUTRAL, percent: 500 });
   assert.deepEqual(sanitizeSettings(null), { ...NEUTRAL });
-  assert.deepEqual(sanitizeSettings({ voice: true }, { percent: 300, bass: true }), {
-    percent: 300,
-    bass: true,
-    voice: true,
-    limiter: false,
-  });
+  assert.deepEqual(sanitizeSettings({ effect: 'voice' }, { percent: 300, effect: 'bass' }), { percent: 300, effect: 'voice' });
+  assert.deepEqual(sanitizeSettings({ percent: 250 }, { percent: 300, effect: 'bass' }), { percent: 250, effect: 'bass' });
 });
 
 test('isNeutral / sameSettings', () => {
   assert.ok(isNeutral(NEUTRAL));
   assert.ok(!isNeutral({ ...NEUTRAL, percent: 101 }));
-  assert.ok(!isNeutral({ ...NEUTRAL, limiter: true }));
-  assert.ok(sameSettings(NEUTRAL, { percent: 100 }));
-  assert.ok(!sameSettings(NEUTRAL, { percent: 100, voice: true }));
+  assert.ok(!isNeutral({ ...NEUTRAL, effect: 'bass' }));
+  assert.ok(sameSettings(NEUTRAL, { percent: 100, effect: 'default' }));
+  assert.ok(!sameSettings(NEUTRAL, { percent: 100, effect: 'voice' }));
 });
 
 test('siteKey only accepts web pages', () => {
@@ -61,5 +57,5 @@ test('levelOf', () => {
   assert.equal(levelOf(0), 'normal');
   assert.equal(levelOf(100), 'normal');
   assert.equal(levelOf(250), 'boost');
-  assert.equal(levelOf(600), 'high');
+  assert.equal(levelOf(500), 'high');
 });

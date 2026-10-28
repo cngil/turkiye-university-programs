@@ -12,7 +12,7 @@ Everyday listeners on laptops and desktops with quiet speakers or headphones: pe
 
 ## Product Purpose
 
-OpenVolume is a browser extension for Chrome (and Chromium browsers) and Firefox that changes the volume of a single tab from 0% to 600%, with optional bass boost, voice boost and a limiter. Success means the tab is audibly louder (or quieter) immediately, without distortion, and the user never has to think about how it works.
+OpenVolume is a browser extension for Chrome (and Chromium browsers) and Firefox that changes the volume of a single tab from 0% to 500%, with a choice of three sound modes: Default, Voice and Bass. Success means the tab is audibly louder (or quieter) immediately, and the user never has to think about how it works.
 
 ## Positioning
 
@@ -23,12 +23,12 @@ An open-source, dependency-free alternative to closed volume boosters: no data c
 - Used from the browser toolbar popup (about 340px wide), opened on the tab that is playing.
 - Typical session: open, drag or type a level (or press a preset), maybe toggle an effect, close. Keyboard shortcuts (Alt+Shift+Up/Down/0) for adjusting without the popup.
 - Secondary jobs: jump to another tab that is playing audio; restore the level last used on a site; reset to 100%.
-- Inspired by the Chrome extension Volume Master, whose users expect the same range and quick tab switching.
+- Inspired by the Chrome extension Volume Master, whose users expect quick tab switching; OpenVolume caps the level at 500%.
 
 ## Capabilities and Constraints
 
-- Volume 0 to 600% in 1% steps; presets; mute; reset; per-site restore (stored locally).
-- Effects: bass boost, voice boost, limiter.
+- Volume 0 to 500% in 1% steps; presets 50 to 500; mute; reset; per-site restore (stored locally).
+- Sound mode, one at a time: Default (untouched), Voice, Bass. No limiter.
 - Engines: page audio (both browsers) and tab capture (Chrome only). Some media (DRM, cross-origin without CORS) cannot use the page engine; Chrome falls back to capture, Firefox cannot boost it.
 - Settings: light/dark theme, engine choice (Chrome), per-site memory, optional all-sites access (Firefox), shortcuts.
 - UI is localized in English and Turkish.

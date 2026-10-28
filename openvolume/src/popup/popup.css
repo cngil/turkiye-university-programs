@@ -18,7 +18,6 @@
   --high: #c2410c; /* above 300%: risk of distortion */
   --warn: #a16207;
   --error: #b91c1c;
-  --on-accent: #ffffff;
   --level: var(--accent);
   --shadow-sm: 0 1px 2px rgba(21, 24, 29, 0.06);
   --shadow: 0 1px 2px rgba(21, 24, 29, 0.05), 0 4px 12px rgba(21, 24, 29, 0.06);
@@ -45,7 +44,6 @@
     --high: #f0864f;
     --warn: #e0b453;
     --error: #f07a7a;
-    --on-accent: #0d1424;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.25);
     color-scheme: dark;
@@ -69,7 +67,6 @@
   --high: #f0864f;
   --warn: #e0b453;
   --error: #f07a7a;
-  --on-accent: #0d1424;
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.25);
   color-scheme: dark;
@@ -159,7 +156,7 @@ input:disabled {
 }
 
 .brand img {
-  border-radius: 5px;
+  border-radius: 7px;
 }
 
 .top-actions {
@@ -326,7 +323,7 @@ body.muted .mute-btn {
   width: 3.1ch;
   padding: 0;
   border: 0;
-  border-radius: 4px;
+  border-radius: 7px;
   background: transparent;
   color: var(--text);
   font: 650 36px/1.1 system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, sans-serif;
@@ -351,7 +348,7 @@ body[data-level='high'] #percent-input {
 .unit {
   margin-left: 3px;
   color: var(--muted);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
 }
 
@@ -522,10 +519,10 @@ body[data-level='high'] #percent-input {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 5px;
   min-width: 0;
   height: 32px;
-  padding: 0 8px;
+  padding: 0 6px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: transparent;
@@ -533,6 +530,11 @@ body[data-level='high'] #percent-input {
   font-size: 12px;
   font-weight: 600;
   transition: background-color 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
+}
+
+.effect svg {
+  width: 14px;
+  height: 14px;
 }
 
 .effect span {
@@ -546,7 +548,7 @@ body[data-level='high'] #percent-input {
   color: var(--text);
 }
 
-.effect[aria-pressed='true'] {
+.effect[aria-checked='true'] {
   border-color: transparent;
   background: var(--accent-soft);
   color: var(--accent-text);
@@ -784,7 +786,7 @@ body[data-level='high'] #percent-input {
 .switch-row small,
 .hint {
   color: var(--muted);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 400;
 }
 
@@ -859,22 +861,8 @@ input[role='switch']:disabled {
   margin: 0;
 }
 
-/* ---------- footer & toast ---------- */
+/* ---------- toast ---------- */
 
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 8px 12px 12px;
-  color: var(--faint);
-  font-size: 11px;
-}
-
-.footer svg {
-  width: 12px;
-  height: 12px;
-}
 
 .toast {
   position: fixed;

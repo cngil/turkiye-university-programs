@@ -1,6 +1,6 @@
 # OpenVolume: Volume Booster
 
-An open-source browser extension that makes any tab louder, up to **600%**, for **Chrome** and **Firefox**. No tracking, no data collection, no network requests.
+An open-source browser extension that makes any tab louder, up to **500%**, for **Chrome** and **Firefox**. No tracking, no data collection, no network requests.
 
 <p align="center">
   <img src="docs/popup-light.png" width="300" alt="OpenVolume popup, light theme">
@@ -9,8 +9,8 @@ An open-source browser extension that makes any tab louder, up to **600%**, for 
 
 ## Features
 
-- **0% to 600% volume** per tab, in 1% steps: slider, mouse wheel (Shift for 1% steps), arrow keys, or type the number.
-- **Bass boost** for music, **voice boost** for clearer dialogue and podcasts, and a **limiter** that prevents distortion at high levels.
+- **0% to 500% volume** per tab, in 1% steps: slider, mouse wheel (Shift for 1% steps), arrow keys, or type the number.
+- **Sound modes**: *Default* (untouched), *Voice* for clearer dialogue and podcasts, or *Bass* for music.
 - **Playing tabs list**: every tab that is playing audio, with its boost level. Click one to switch to it.
 - **Per-site memory**: the level you used on a site is saved locally. *Restore* brings it back in one click, *Reset* returns to 100%. Optional automatic restore.
 - **Keyboard shortcuts**: `Alt+Shift+Up` / `Alt+Shift+Down` change the volume by 10%, `Alt+Shift+0` resets it. In the popup: arrow keys, `M` to mute, `0` to reset.
@@ -61,7 +61,7 @@ cd openvolume && npm run build
 ## How it works
 
 Audio is processed with the browser's built-in [Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API):
-`source -> gain (0-600%) -> bass shelf -> voice filters -> [limiter] -> speakers`
+`source -> gain (0-500%) -> bass shelf -> voice filters -> speakers` (the filters stay flat in Default mode)
 
 There are two engines:
 

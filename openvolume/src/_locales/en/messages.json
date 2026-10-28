@@ -4,7 +4,7 @@
     "description": "Extension name shown in the browser and stores"
   },
   "extDescription": {
-    "message": "Boost any tab's volume up to 600%, with bass and voice boost. Open source, no tracking, no data collection."
+    "message": "Boost any tab's volume up to 500%, with bass and voice boost. Open source, no tracking, no data collection."
   },
   "cmdUp": {
     "message": "Increase volume by 10%"
@@ -38,12 +38,6 @@
   },
   "voiceTitle": {
     "message": "Voice boost: clearer dialogue and podcasts"
-  },
-  "limiter": {
-    "message": "Limiter"
-  },
-  "limiterTitle": {
-    "message": "Limiter: prevents distortion at high volume"
   },
   "reset": {
     "message": "Reset"
@@ -129,9 +123,6 @@
   "about": {
     "message": "About"
   },
-  "privacyNote": {
-    "message": "No data collected · Open source"
-  },
   "privacyLong": {
     "message": "OpenVolume works entirely inside your browser. It has no servers, no analytics and makes no network requests."
   },
@@ -191,5 +182,14 @@
   },
   "themeToLight": {
     "message": "Switch to light mode"
+  },
+  "effectDefault": {
+    "message": "Default"
+  },
+  "defaultTitle": {
+    "message": "Default: the original sound, no equalizer"
+  },
+  "soundMode": {
+    "message": "Sound mode"
   }
 }

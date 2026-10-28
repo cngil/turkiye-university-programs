@@ -13,11 +13,11 @@ Scope: the toolbar popup (src/popup), about 340px wide, light and dark themes. V
 
 THESIS: A plain, modern volume popup in the category standard, played straight. The user rejected the dealt concept as too quirky and asked for no concept; Volume Master is the craft bar, without cloning it.
 
-OWN-WORLD: Neutral grey ground, white (light) or near-black (dark) cards, one blue accent for the slider fill, toggled effects and links; orange only above 300%. System sans, 8 to 12px radii, soft shadows, segmented preset control, round mute button, iOS-style switches.
+OWN-WORLD: Neutral grey ground, white (light) or near-black (dark) cards, one blue accent for the slider fill, the selected sound mode and links; orange only above 300%. System sans, 8 to 12px radii, soft shadows, segmented preset control, round mute button, iOS-style switches.
 
 STORY: The visitor sees which tab they control and its level at once, changes it with slider, keys, wheel or presets, and can jump to another playing tab.
 
-FIRST VIEWPORT: Header with name, theme toggle and settings. One card: favicon, title and host, engine chip; large level readout with mute and reset; slider with tick labels; preset segmented control; three effect toggles; restore and status lines. Below, the playing tabs as simple rows.
+FIRST VIEWPORT: Header with name, theme toggle and settings. One card: favicon, title and host, engine chip; large level readout with mute and reset; slider with tick labels; preset segmented control (50 to 500); a Default/Voice/Bass sound mode choice; restore and status lines. No footer. Below, the playing tabs as simple rows.
 
 FORM: Standing exit (category standard) chosen by the user over the roll; seed:943df0ee4306876a
 
